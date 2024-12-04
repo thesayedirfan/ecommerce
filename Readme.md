@@ -10,7 +10,6 @@
 - admin also have the api to stats of the total orders
 
 
-
 ### Installation
 1. have latest version of go installed
     *  verify the installation of go
@@ -36,6 +35,15 @@
     ```
 
 ## API Documentation
+### API Endpoints
 
+| **Category** | **Endpoint Name**   | **Method** | **URL**                    | **Request Body**                                                                                                                                               | **Description** |
+|--------------|---------------------|------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| Admin        | admin-stats         | GET        | `{{URL}}admin/stats`       | N/A                                                                                                                                                           |         allows admin to get the stats of total orders,discount, discount codes    |
+| Admin        | discount-code       | POST       | `{{URL}}admin/discount/generate` | ```{  "user_id": "1"}```                                                                                                                           |        allows user to get the discount if the threshold id met         |
+| Cart         | AddItemToCart       | POST       | `{{URL}}cart/add`          | ```{  "product_id": "2",  "user_id": "1",  "name": "Bottle 2",  "price": 10,  "quantity": 1,  "Price": 10}```                            |             allows user to add the item in cart    |
+| Cart         | Checkout            | POST       | `{{URL}}cart/checkout`     | ```{  "user_id": "1"}```                                                                                  |           allows use to checkout with or without discout code      |
 
+### Notes
 
+- **URL Variables:** The `{{URL}}` variable is used as a placeholder in all endpoints.
