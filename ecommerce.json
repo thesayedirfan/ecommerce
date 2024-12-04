@@ -1,0 +1,145 @@
+{
+  "info": {
+    "name": "ecommerce",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "admin-stats",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{URL}}admin/stats",
+              "protocol": "",
+              "host": [
+                "{{URL}}admin"
+              ],
+              "path": [
+                "stats"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "discount-code",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{URL}}admin/discount/generate",
+              "protocol": "",
+              "host": [
+                "{{URL}}admin"
+              ],
+              "path": [
+                "discount",
+                "generate"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "cart",
+      "item": [
+        {
+          "name": "AddItemToCart",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{URL}}cart/add",
+              "protocol": "",
+              "host": [
+                "{{URL}}cart"
+              ],
+              "path": [
+                "add"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_id\": \"2\",\n  \"user_id\": \"1\",\n  \"name\": \"Bottle 2\",\n  \"price\": 10,\n  \"quantity\": 1,\n  \"Price\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Checkout",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{URL}}cart/checkout",
+              "protocol": "",
+              "host": [
+                "{{URL}}cart"
+              ],
+              "path": [
+                "checkout"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"1\",\n    \"discount_code\": \"DISCOUNT-ad5dd9ef\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "URL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
